@@ -7,6 +7,7 @@ use App\Models\User;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Validation\ValidationException;
+use Laravel\Sanctum\PersonalAccessToken;
 
 class TokensController extends Controller
 {
@@ -33,5 +34,14 @@ class TokensController extends Controller
             'token' => $token->plainTextToken,
             'user' => UserResource::make($user),
         ]);
+    }
+
+    public function destroy(Request $request)
+    {
+        $token = PersonalAccessToken::findToken($request->bearerToken());
+
+        $token?->delete();
+
+        return response()->noContent();
     }
 }
