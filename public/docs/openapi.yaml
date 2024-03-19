@@ -5,7 +5,7 @@ info:
   version: 1.0.0
 servers:
   -
-    url: 'http://localhost'
+    url: 'http://localhost:8000'
 paths:
   /api/login:
     post:
@@ -26,11 +26,11 @@ paths:
                 email:
                   type: string
                   description: 'Must be a valid email address.'
-                  example: louvenia36@example.org
+                  example: mallory05@example.net
                 password:
                   type: string
                   description: ''
-                  example: in
+                  example: repellendus
               required:
                 - email
                 - password
@@ -59,22 +59,22 @@ paths:
                 type: object
                 example:
                   data:
-                    id: 1
-                    name: 'Vinnie Lemke'
-                    email: ortiz.marianna@example.org
+                    id: 2
+                    name: 'Grayson Greenfelder'
+                    email: qcrooks@example.com
                 properties:
                   data:
                     type: object
                     properties:
                       id:
                         type: integer
-                        example: 1
+                        example: 2
                       name:
                         type: string
-                        example: 'Vinnie Lemke'
+                        example: 'Grayson Greenfelder'
                       email:
                         type: string
-                        example: ortiz.marianna@example.org
+                        example: qcrooks@example.com
       tags:
         - Endpoints
   /api/time-entries:
@@ -94,11 +94,11 @@ paths:
                   data:
                     -
                       id: 1
-                      started_at: '2024-03-19T02:38:51.000000Z'
+                      started_at: '2024-03-19T01:52:25.000000Z'
                       ended_at: null
                     -
                       id: 2
-                      started_at: '2024-03-19T01:52:46.000000Z'
+                      started_at: '2024-03-19T02:09:08.000000Z'
                       ended_at: null
                 properties:
                   data:
@@ -106,11 +106,11 @@ paths:
                     example:
                       -
                         id: 1
-                        started_at: '2024-03-19T02:38:51.000000Z'
+                        started_at: '2024-03-19T01:52:25.000000Z'
                         ended_at: null
                       -
                         id: 2
-                        started_at: '2024-03-19T01:52:46.000000Z'
+                        started_at: '2024-03-19T02:09:08.000000Z'
                         ended_at: null
                     items:
                       type: object
@@ -120,7 +120,7 @@ paths:
                           example: 1
                         started_at:
                           type: string
-                          example: '2024-03-19T02:38:51.000000Z'
+                          example: '2024-03-19T01:52:25.000000Z'
                         ended_at:
                           type: string
                           example: null
@@ -141,7 +141,7 @@ paths:
                 example:
                   data:
                     id: 1
-                    started_at: '2024-03-19T02:17:59.000000Z'
+                    started_at: '2024-03-19T02:42:09.000000Z'
                     ended_at: null
                 properties:
                   data:
@@ -152,7 +152,7 @@ paths:
                         example: 1
                       started_at:
                         type: string
-                        example: '2024-03-19T02:17:59.000000Z'
+                        example: '2024-03-19T02:42:09.000000Z'
                       ended_at:
                         type: string
                         example: null
@@ -174,7 +174,7 @@ paths:
                 example:
                   data:
                     id: 1
-                    started_at: '2024-03-19T02:14:17.000000Z'
+                    started_at: '2024-03-19T02:21:31.000000Z'
                     ended_at: null
                 properties:
                   data:
@@ -185,7 +185,7 @@ paths:
                         example: 1
                       started_at:
                         type: string
-                        example: '2024-03-19T02:14:17.000000Z'
+                        example: '2024-03-19T02:21:31.000000Z'
                       ended_at:
                         type: string
                         example: null
@@ -196,7 +196,7 @@ paths:
         in: path
         name: entry_id
         description: 'The ID of the entry.'
-        example: 14
+        example: 19
         required: true
         schema:
           type: integer

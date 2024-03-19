@@ -5,12 +5,12 @@
             "key": "baseUrl",
             "type": "string",
             "name": "string",
-            "value": "http:\/\/localhost"
+            "value": "http:\/\/localhost:8000"
         }
     ],
     "info": {
         "name": "API - Sistema de Pontos",
-        "_postman_id": "a29d0f0b-d9b1-4d6f-bb28-d9d5599910ae",
+        "_postman_id": "bd774f2b-f33b-40c8-9ae6-13d94929c057",
         "description": "API para o sistema de pontos.",
         "schema": "https:\/\/schema.getpostman.com\/json\/collection\/v2.1.0\/collection.json"
     },
@@ -41,7 +41,7 @@
                         ],
                         "body": {
                             "mode": "raw",
-                            "raw": "{\"email\":\"louvenia36@example.org\",\"password\":\"in\"}"
+                            "raw": "{\"email\":\"mallory05@example.net\",\"password\":\"repellendus\"}"
                         },
                         "description": "",
                         "auth": {
@@ -102,7 +102,7 @@
                         {
                             "header": [],
                             "code": 200,
-                            "body": "{\"data\":{\"id\":1,\"name\":\"Vinnie Lemke\",\"email\":\"ortiz.marianna@example.org\"}}",
+                            "body": "{\"data\":{\"id\":2,\"name\":\"Grayson Greenfelder\",\"email\":\"qcrooks@example.com\"}}",
                             "name": ""
                         }
                     ]
@@ -134,7 +134,7 @@
                         {
                             "header": [],
                             "code": 200,
-                            "body": "{\"data\":[{\"id\":1,\"started_at\":\"2024-03-19T02:38:51.000000Z\",\"ended_at\":null},{\"id\":2,\"started_at\":\"2024-03-19T01:52:46.000000Z\",\"ended_at\":null}]}",
+                            "body": "{\"data\":[{\"id\":1,\"started_at\":\"2024-03-19T01:52:25.000000Z\",\"ended_at\":null},{\"id\":2,\"started_at\":\"2024-03-19T02:09:08.000000Z\",\"ended_at\":null}]}",
                             "name": ""
                         }
                     ]
@@ -166,7 +166,7 @@
                         {
                             "header": [],
                             "code": 200,
-                            "body": "{\"data\":{\"id\":1,\"started_at\":\"2024-03-19T02:17:59.000000Z\",\"ended_at\":null}}",
+                            "body": "{\"data\":{\"id\":1,\"started_at\":\"2024-03-19T02:42:09.000000Z\",\"ended_at\":null}}",
                             "name": ""
                         }
                     ]
@@ -183,7 +183,7 @@
                                 {
                                     "id": "entry_id",
                                     "key": "entry_id",
-                                    "value": "14",
+                                    "value": "19",
                                     "description": "The ID of the entry."
                                 }
                             ]
@@ -206,7 +206,7 @@
                         {
                             "header": [],
                             "code": 200,
-                            "body": "{\"data\":{\"id\":1,\"started_at\":\"2024-03-19T02:14:17.000000Z\",\"ended_at\":null}}",
+                            "body": "{\"data\":{\"id\":1,\"started_at\":\"2024-03-19T02:21:31.000000Z\",\"ended_at\":null}}",
                             "name": ""
                         }
                     ]
