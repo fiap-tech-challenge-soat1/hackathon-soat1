@@ -11,6 +11,11 @@ use Laravel\Sanctum\PersonalAccessToken;
 
 class TokensController extends Controller
 {
+    /**
+     * Criar token.
+     *
+     * @unauthenticated
+     */
     public function store(Request $request)
     {
         $request->validate([
@@ -36,6 +41,9 @@ class TokensController extends Controller
         ]);
     }
 
+    /**
+     * Revoga o token atual.
+     */
     public function destroy(Request $request)
     {
         $token = PersonalAccessToken::findToken($request->bearerToken());

@@ -11,6 +11,12 @@ class TimeEntriesController extends Controller
 {
     use AuthorizesRequests;
 
+    /**
+     * Lista os pontos do usuário atual.
+     *
+     * @apiResourceCollection \App\Http\Resources\TimeEntryResource
+     * @apiResourceModel \App\Models\TimeEntry
+     */
     public function index(Request $request)
     {
         return TimeEntryResource::collection(
@@ -18,6 +24,12 @@ class TimeEntriesController extends Controller
         );
     }
 
+    /**
+     * Registra um novo ponto.
+     *
+     * @apiResource \App\Http\Resources\TimeEntryResource
+     * @apiResourceModel \App\Models\TimeEntry
+     */
     public function store(Request $request)
     {
         return TimeEntryResource::make($request->user()->entries()->create([
@@ -25,6 +37,12 @@ class TimeEntriesController extends Controller
         ]));
     }
 
+    /**
+     * Atualiza um ponto (marca como finalizado).
+     *
+     * @apiResource \App\Http\Resources\TimeEntryResource
+     * @apiResourceModel \App\Models\TimeEntry
+     */
     public function update(TimeEntry $entry)
     {
         $this->authorize('update', $entry);

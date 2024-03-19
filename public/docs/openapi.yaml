@@ -1,0 +1,215 @@
+openapi: 3.0.3
+info:
+  title: 'API - Sistema de Pontos'
+  description: 'API para o sistema de pontos.'
+  version: 1.0.0
+servers:
+  -
+    url: 'http://localhost'
+paths:
+  /api/login:
+    post:
+      summary: 'Criar token.'
+      operationId: criarToken
+      description: ''
+      parameters: []
+      responses: {  }
+      tags:
+        - Endpoints
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                email:
+                  type: string
+                  description: 'Must be a valid email address.'
+                  example: louvenia36@example.org
+                password:
+                  type: string
+                  description: ''
+                  example: in
+              required:
+                - email
+                - password
+      security: []
+  /api/logout:
+    delete:
+      summary: 'Revoga o token atual.'
+      operationId: revogaOTokenAtual
+      description: ''
+      parameters: []
+      responses: {  }
+      tags:
+        - Endpoints
+  /api/user:
+    get:
+      summary: 'Ver usuário atual.'
+      operationId: verUsurioAtual
+      description: ''
+      parameters: []
+      responses:
+        200:
+          description: ''
+          content:
+            application/json:
+              schema:
+                type: object
+                example:
+                  data:
+                    id: 1
+                    name: 'Vinnie Lemke'
+                    email: ortiz.marianna@example.org
+                properties:
+                  data:
+                    type: object
+                    properties:
+                      id:
+                        type: integer
+                        example: 1
+                      name:
+                        type: string
+                        example: 'Vinnie Lemke'
+                      email:
+                        type: string
+                        example: ortiz.marianna@example.org
+      tags:
+        - Endpoints
+  /api/time-entries:
+    get:
+      summary: 'Lista os pontos do usuário atual.'
+      operationId: listaOsPontosDoUsurioAtual
+      description: ''
+      parameters: []
+      responses:
+        200:
+          description: ''
+          content:
+            application/json:
+              schema:
+                type: object
+                example:
+                  data:
+                    -
+                      id: 1
+                      started_at: '2024-03-19T02:38:51.000000Z'
+                      ended_at: null
+                    -
+                      id: 2
+                      started_at: '2024-03-19T01:52:46.000000Z'
+                      ended_at: null
+                properties:
+                  data:
+                    type: array
+                    example:
+                      -
+                        id: 1
+                        started_at: '2024-03-19T02:38:51.000000Z'
+                        ended_at: null
+                      -
+                        id: 2
+                        started_at: '2024-03-19T01:52:46.000000Z'
+                        ended_at: null
+                    items:
+                      type: object
+                      properties:
+                        id:
+                          type: integer
+                          example: 1
+                        started_at:
+                          type: string
+                          example: '2024-03-19T02:38:51.000000Z'
+                        ended_at:
+                          type: string
+                          example: null
+      tags:
+        - Endpoints
+    post:
+      summary: 'Registra um novo ponto.'
+      operationId: registraUmNovoPonto
+      description: ''
+      parameters: []
+      responses:
+        200:
+          description: ''
+          content:
+            application/json:
+              schema:
+                type: object
+                example:
+                  data:
+                    id: 1
+                    started_at: '2024-03-19T02:17:59.000000Z'
+                    ended_at: null
+                properties:
+                  data:
+                    type: object
+                    properties:
+                      id:
+                        type: integer
+                        example: 1
+                      started_at:
+                        type: string
+                        example: '2024-03-19T02:17:59.000000Z'
+                      ended_at:
+                        type: string
+                        example: null
+      tags:
+        - Endpoints
+  '/api/time-entries/{entry_id}':
+    put:
+      summary: 'Atualiza um ponto (marca como finalizado).'
+      operationId: atualizaUmPontomarcaComoFinalizado
+      description: ''
+      parameters: []
+      responses:
+        200:
+          description: ''
+          content:
+            application/json:
+              schema:
+                type: object
+                example:
+                  data:
+                    id: 1
+                    started_at: '2024-03-19T02:14:17.000000Z'
+                    ended_at: null
+                properties:
+                  data:
+                    type: object
+                    properties:
+                      id:
+                        type: integer
+                        example: 1
+                      started_at:
+                        type: string
+                        example: '2024-03-19T02:14:17.000000Z'
+                      ended_at:
+                        type: string
+                        example: null
+      tags:
+        - Endpoints
+    parameters:
+      -
+        in: path
+        name: entry_id
+        description: 'The ID of the entry.'
+        example: 14
+        required: true
+        schema:
+          type: integer
+tags:
+  -
+    name: Endpoints
+    description: ''
+components:
+  securitySchemes:
+    default:
+      type: http
+      scheme: bearer
+      description: ''
+security:
+  -
+    default: []
