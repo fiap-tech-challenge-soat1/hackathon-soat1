@@ -41,3 +41,29 @@ it('can stop a timer', function () {
     $this->assertNotNull($entry->refresh()->ended_at);
     $this->assertTrue($entry->ended_at->is(now()));
 });
+
+it('only the time entry owner can update the entry', function () {
+    $entry = TimeEntry::factory()->create([
+        'started_at' => now()->subHour(),
+        'ended_at' => null,
+    ]);
+
+    Sanctum::actingAs(User::factory()->create(), ['*']);
+
+    $this->putJson(route('time-entries.update', $entry))
+        ->assertForbidden();
+
+    $this->assertNull($entry->refresh()->ended_at);
+});
+
+it('lists entries', function () {
+    $user = User::factory()
+        ->has(TimeEntry::factory()->times(3), 'entries')
+        ->create();
+
+    Sanctum::actingAs($user, ['*']);
+
+    $this->getJson(route('time-entries.index'))
+        ->assertOk()
+        ->assertJsonCount(3, 'data');
+});

@@ -12,6 +12,6 @@ Route::middleware(['auth:sanctum'])->group(function () {
     Route::get('/user', [UserController::class, 'show'])->name('api.user');
 
     Route::apiResource('time-entries', TimeEntriesController::class)
-        ->only(['store', 'update'])
+        ->only(['index', 'store', 'update'])
         ->parameters(['time-entries' => 'entry']);
 });
