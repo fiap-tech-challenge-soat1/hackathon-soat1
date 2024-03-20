@@ -14,8 +14,8 @@ return new class extends Migration
         Schema::create('time_entries', function (Blueprint $table) {
             $table->id();
             $table->foreignId('user_id')->constrained();
-            $table->dateTime('started_at');
-            $table->dateTime('ended_at')->nullable();
+            $table->dateTimeTz('started_at');
+            $table->dateTimeTz('ended_at')->nullable();
             $table->timestamps();
         });
     }

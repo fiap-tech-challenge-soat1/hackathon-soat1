@@ -14,6 +14,10 @@ it('requests report', function () {
             'started_at' => now()->subMonth()->startOfMonth()->addDay()->startOfDay(),
             'ended_at' => now()->subMonth()->startOfMonth()->addDay()->startOfDay()->addHour(),
         ]), 'entries')
+        // Shouldn't include this...
+        ->has(TimeEntry::factory([
+            'ended_at' => null,
+        ]), 'entries')
         ->create();
 
     Sanctum::actingAs($user, ['*']);
