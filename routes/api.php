@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\ReportsController;
 use App\Http\Controllers\TimeEntriesController;
 use App\Http\Controllers\TokensController;
 use App\Http\Controllers\UserController;
@@ -14,4 +15,6 @@ Route::middleware(['auth:sanctum'])->group(function () {
     Route::apiResource('time-entries', TimeEntriesController::class)
         ->only(['index', 'store', 'update'])
         ->parameters(['time-entries' => 'entry']);
+
+    Route::apiResource('reports', ReportsController::class)->only(['store']);
 });
