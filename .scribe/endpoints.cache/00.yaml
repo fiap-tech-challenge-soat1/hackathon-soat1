@@ -28,7 +28,7 @@ endpoints:
         name: email
         description: 'Must be a valid email address.'
         required: true
-        example: mallory05@example.net
+        example: kuhic.avery@example.org
         type: string
         enumValues: []
         exampleWasSpecified: false
@@ -37,14 +37,14 @@ endpoints:
         name: password
         description: ''
         required: true
-        example: repellendus
+        example: dolor
         type: string
         enumValues: []
         exampleWasSpecified: false
         custom: []
     cleanBodyParameters:
-      email: mallory05@example.net
-      password: repellendus
+      email: kuhic.avery@example.org
+      password: dolor
     fileParameters: []
     responses: []
     responseFields: []
@@ -82,7 +82,7 @@ endpoints:
     auth:
       - headers
       - Authorization
-      - 'Bearer ch3a8DdgEaP615be46ZvfkV'
+      - 'Bearer 1dc8fvhD6e4aba5PV6g3kZE'
     controller: null
     method: null
     route: null
@@ -114,7 +114,7 @@ endpoints:
     responses:
       -
         status: 200
-        content: '{"data":{"id":2,"name":"Grayson Greenfelder","email":"qcrooks@example.com"}}'
+        content: '{"data":{"id":2,"name":"Mrs. Pearline Klein","email":"cary.emmerich@example.org"}}'
         headers: []
         description: ''
         custom: []
@@ -122,7 +122,7 @@ endpoints:
     auth:
       - headers
       - Authorization
-      - 'Bearer 4dgb6EfvDZacP5h8k36Vae1'
+      - 'Bearer P6dg3ka6e4h8a5VbvcEDZ1f'
     controller: null
     method: null
     route: null
@@ -154,7 +154,7 @@ endpoints:
     responses:
       -
         status: 200
-        content: '{"data":[{"id":1,"started_at":"2024-03-19T01:52:25.000000Z","ended_at":null},{"id":2,"started_at":"2024-03-19T02:09:08.000000Z","ended_at":null}]}'
+        content: '{"data":[{"id":1,"started_at":"2024-03-20T02:04:30.000000Z","ended_at":null},{"id":2,"started_at":"2024-03-20T01:56:38.000000Z","ended_at":null}]}'
         headers: []
         description: ''
         custom: []
@@ -162,7 +162,7 @@ endpoints:
     auth:
       - headers
       - Authorization
-      - 'Bearer De6fb3gEd54kPaav1c8VZh6'
+      - 'Bearer a416Ee68dVgPZbfD3c5hakv'
     controller: null
     method: null
     route: null
@@ -194,7 +194,7 @@ endpoints:
     responses:
       -
         status: 200
-        content: '{"data":{"id":1,"started_at":"2024-03-19T02:42:09.000000Z","ended_at":null}}'
+        content: '{"data":{"id":3,"started_at":"2024-03-20T01:30:13.000000Z","ended_at":null}}'
         headers: []
         description: ''
         custom: []
@@ -202,7 +202,7 @@ endpoints:
     auth:
       - headers
       - Authorization
-      - 'Bearer 1Dde6VbZvh64gkE8Pac3fa5'
+      - 'Bearer fdhgcvZa65akDP34be68EV1'
     controller: null
     method: null
     route: null
@@ -230,13 +230,13 @@ endpoints:
         name: entry_id
         description: 'The ID of the entry.'
         required: true
-        example: 19
+        example: 20
         type: integer
         enumValues: []
         exampleWasSpecified: false
         custom: []
     cleanUrlParameters:
-      entry_id: 19
+      entry_id: 20
     queryParameters: []
     cleanQueryParameters: []
     bodyParameters: []
@@ -245,7 +245,7 @@ endpoints:
     responses:
       -
         status: 200
-        content: '{"data":{"id":1,"started_at":"2024-03-19T02:21:31.000000Z","ended_at":null}}'
+        content: '{"data":{"id":4,"started_at":"2024-03-20T01:25:29.000000Z","ended_at":null}}'
         headers: []
         description: ''
         custom: []
@@ -253,7 +253,7 @@ endpoints:
     auth:
       - headers
       - Authorization
-      - 'Bearer vfVg4b8P1dZc65eaahEDk63'
+      - 'Bearer 5DEgd41b6ceaZhvVakf63P8'
     controller: null
     method: null
     route: null

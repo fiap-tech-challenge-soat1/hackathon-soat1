@@ -26,7 +26,7 @@
             </style>
 
     <script>
-        var tryItOutBaseUrl = "http://localhost:8000";
+        var tryItOutBaseUrl = "http://localhost";
         var useCsrf = Boolean();
         var csrfUrl = "/sanctum/csrf-cookie";
     </script>
@@ -100,7 +100,7 @@
     </ul>
 
     <ul class="toc-footer" id="last-updated">
-        <li>Last updated: March 19, 2024</li>
+        <li>Last updated: March 20, 2024</li>
     </ul>
 </div>
 
@@ -110,7 +110,7 @@
         <h1 id="introducao">Introdução</h1>
 <p>API para o sistema de pontos.</p>
 <aside>
-    <strong>URL Base</strong>: <code>http://localhost:8000</code>
+    <strong>URL Base</strong>: <code>http://localhost</code>
 </aside>
 <p>Essa documentação contêm informações sobre os endpoints disponíveis para consumo da API.</p>
 <aside>Aqui você vai encontrar vários exemplos sobre como as requisições e respostas que você deve enviar para cada endpoint.</aside>
@@ -136,19 +136,19 @@
 
 <div class="bash-example">
     <pre><code class="language-bash">curl --request POST \
-    "http://localhost:8000/api/login" \
+    "http://localhost/api/login" \
     --header "Content-Type: application/json" \
     --header "Accept: application/json" \
     --data "{
-    \"email\": \"mallory05@example.net\",
-    \"password\": \"repellendus\"
+    \"email\": \"kuhic.avery@example.org\",
+    \"password\": \"dolor\"
 }"
 </code></pre></div>
 
 
 <div class="javascript-example">
     <pre><code class="language-javascript">const url = new URL(
-    "http://localhost:8000/api/login"
+    "http://localhost/api/login"
 );
 
 const headers = {
@@ -157,8 +157,8 @@ const headers = {
 };
 
 let body = {
-    "email": "mallory05@example.net",
-    "password": "repellendus"
+    "email": "kuhic.avery@example.org",
+    "password": "dolor"
 };
 
 fetch(url, {
@@ -247,10 +247,10 @@ Você pode olhar o console de Dev Tools para depurar as informações.</code></p
  &nbsp;
                 <input type="text" style="display: none"
                               name="email"                data-endpoint="POSTapi-login"
-               value="mallory05@example.net"
+               value="kuhic.avery@example.org"
                data-component="body">
     <br>
-<p>Must be a valid email address. Example: <code>mallory05@example.net</code></p>
+<p>Must be a valid email address. Example: <code>kuhic.avery@example.org</code></p>
         </div>
                 <div style=" padding-left: 28px;  clear: unset;">
             <b style="line-height: 2;"><code>password</code></b>&nbsp;&nbsp;
@@ -258,10 +258,10 @@ Você pode olhar o console de Dev Tools para depurar as informações.</code></p
  &nbsp;
                 <input type="text" style="display: none"
                               name="password"                data-endpoint="POSTapi-login"
-               value="repellendus"
+               value="dolor"
                data-component="body">
     <br>
-<p>Example: <code>repellendus</code></p>
+<p>Example: <code>dolor</code></p>
         </div>
         </form>
 
@@ -279,7 +279,7 @@ Você pode olhar o console de Dev Tools para depurar as informações.</code></p
 
 <div class="bash-example">
     <pre><code class="language-bash">curl --request DELETE \
-    "http://localhost:8000/api/logout" \
+    "http://localhost/api/logout" \
     --header "Authorization: Bearer {SEU_TOKEN_AQUI}" \
     --header "Content-Type: application/json" \
     --header "Accept: application/json"</code></pre></div>
@@ -287,7 +287,7 @@ Você pode olhar o console de Dev Tools para depurar as informações.</code></p
 
 <div class="javascript-example">
     <pre><code class="language-javascript">const url = new URL(
-    "http://localhost:8000/api/logout"
+    "http://localhost/api/logout"
 );
 
 const headers = {
@@ -401,7 +401,7 @@ Você pode olhar o console de Dev Tools para depurar as informações.</code></p
 
 <div class="bash-example">
     <pre><code class="language-bash">curl --request GET \
-    --get "http://localhost:8000/api/user" \
+    --get "http://localhost/api/user" \
     --header "Authorization: Bearer {SEU_TOKEN_AQUI}" \
     --header "Content-Type: application/json" \
     --header "Accept: application/json"</code></pre></div>
@@ -409,7 +409,7 @@ Você pode olhar o console de Dev Tools para depurar as informações.</code></p
 
 <div class="javascript-example">
     <pre><code class="language-javascript">const url = new URL(
-    "http://localhost:8000/api/user"
+    "http://localhost/api/user"
 );
 
 const headers = {
@@ -434,8 +434,8 @@ fetch(url, {
 <code class="language-json" style="max-height: 300px;">{
     &quot;data&quot;: {
         &quot;id&quot;: 2,
-        &quot;name&quot;: &quot;Grayson Greenfelder&quot;,
-        &quot;email&quot;: &quot;qcrooks@example.com&quot;
+        &quot;name&quot;: &quot;Mrs. Pearline Klein&quot;,
+        &quot;email&quot;: &quot;cary.emmerich@example.org&quot;
     }
 }</code>
  </pre>
@@ -536,7 +536,7 @@ Você pode olhar o console de Dev Tools para depurar as informações.</code></p
 
 <div class="bash-example">
     <pre><code class="language-bash">curl --request GET \
-    --get "http://localhost:8000/api/time-entries" \
+    --get "http://localhost/api/time-entries" \
     --header "Authorization: Bearer {SEU_TOKEN_AQUI}" \
     --header "Content-Type: application/json" \
     --header "Accept: application/json"</code></pre></div>
@@ -544,7 +544,7 @@ Você pode olhar o console de Dev Tools para depurar as informações.</code></p
 
 <div class="javascript-example">
     <pre><code class="language-javascript">const url = new URL(
-    "http://localhost:8000/api/time-entries"
+    "http://localhost/api/time-entries"
 );
 
 const headers = {
@@ -570,12 +570,12 @@ fetch(url, {
     &quot;data&quot;: [
         {
             &quot;id&quot;: 1,
-            &quot;started_at&quot;: &quot;2024-03-19T01:52:25.000000Z&quot;,
+            &quot;started_at&quot;: &quot;2024-03-20T02:04:30.000000Z&quot;,
             &quot;ended_at&quot;: null
         },
         {
             &quot;id&quot;: 2,
-            &quot;started_at&quot;: &quot;2024-03-19T02:09:08.000000Z&quot;,
+            &quot;started_at&quot;: &quot;2024-03-20T01:56:38.000000Z&quot;,
             &quot;ended_at&quot;: null
         }
     ]
@@ -678,7 +678,7 @@ Você pode olhar o console de Dev Tools para depurar as informações.</code></p
 
 <div class="bash-example">
     <pre><code class="language-bash">curl --request POST \
-    "http://localhost:8000/api/time-entries" \
+    "http://localhost/api/time-entries" \
     --header "Authorization: Bearer {SEU_TOKEN_AQUI}" \
     --header "Content-Type: application/json" \
     --header "Accept: application/json"</code></pre></div>
@@ -686,7 +686,7 @@ Você pode olhar o console de Dev Tools para depurar as informações.</code></p
 
 <div class="javascript-example">
     <pre><code class="language-javascript">const url = new URL(
-    "http://localhost:8000/api/time-entries"
+    "http://localhost/api/time-entries"
 );
 
 const headers = {
@@ -710,8 +710,8 @@ fetch(url, {
 
 <code class="language-json" style="max-height: 300px;">{
     &quot;data&quot;: {
-        &quot;id&quot;: 1,
-        &quot;started_at&quot;: &quot;2024-03-19T02:42:09.000000Z&quot;,
+        &quot;id&quot;: 3,
+        &quot;started_at&quot;: &quot;2024-03-20T01:30:13.000000Z&quot;,
         &quot;ended_at&quot;: null
     }
 }</code>
@@ -813,7 +813,7 @@ Você pode olhar o console de Dev Tools para depurar as informações.</code></p
 
 <div class="bash-example">
     <pre><code class="language-bash">curl --request PUT \
-    "http://localhost:8000/api/time-entries/19" \
+    "http://localhost/api/time-entries/20" \
     --header "Authorization: Bearer {SEU_TOKEN_AQUI}" \
     --header "Content-Type: application/json" \
     --header "Accept: application/json"</code></pre></div>
@@ -821,7 +821,7 @@ Você pode olhar o console de Dev Tools para depurar as informações.</code></p
 
 <div class="javascript-example">
     <pre><code class="language-javascript">const url = new URL(
-    "http://localhost:8000/api/time-entries/19"
+    "http://localhost/api/time-entries/20"
 );
 
 const headers = {
@@ -845,8 +845,8 @@ fetch(url, {
 
 <code class="language-json" style="max-height: 300px;">{
     &quot;data&quot;: {
-        &quot;id&quot;: 1,
-        &quot;started_at&quot;: &quot;2024-03-19T02:21:31.000000Z&quot;,
+        &quot;id&quot;: 4,
+        &quot;started_at&quot;: &quot;2024-03-20T01:25:29.000000Z&quot;,
         &quot;ended_at&quot;: null
     }
 }</code>
@@ -943,10 +943,10 @@ Você pode olhar o console de Dev Tools para depurar as informações.</code></p
  &nbsp;
                 <input type="number" style="display: none"
                step="any"               name="entry_id"                data-endpoint="PUTapi-time-entries--entry_id-"
-               value="19"
+               value="20"
                data-component="url">
     <br>
-<p>The ID of the entry. Example: <code>19</code></p>
+<p>The ID of the entry. Example: <code>20</code></p>
             </div>
                     </form>
 

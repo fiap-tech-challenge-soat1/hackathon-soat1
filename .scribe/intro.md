@@ -3,7 +3,7 @@
 API para o sistema de pontos.
 
 <aside>
-    <strong>URL Base</strong>: <code>http://localhost:8000</code>
+    <strong>URL Base</strong>: <code>http://localhost</code>
 </aside>
 
 Essa documentação contêm informações sobre os endpoints disponíveis para consumo da API.

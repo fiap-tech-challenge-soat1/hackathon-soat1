@@ -2,6 +2,7 @@
 
 use Illuminate\Support\Facades\Route;
 
-Route::get('/', function () {
-    return view('welcome');
-});
+Route::redirect('/login', '/')->name('login');
+
+# Docs URL
+Route::redirect('/docs', '/docs/index.html');
