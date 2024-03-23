@@ -18,6 +18,7 @@ class TimeEntriesController extends Controller
      * Lista os pontos do usuário atual.
      *
      * @apiResourceCollection \App\Http\Resources\TimeEntryResource
+     *
      * @apiResourceModel \Modules\Timekeeping\Entities\TimeEntry
      */
     public function index(Request $request, ListEntriesForUser $lister)
@@ -31,6 +32,7 @@ class TimeEntriesController extends Controller
      * Registra um novo ponto.
      *
      * @apiResource \App\Http\Resources\TimeEntryResource
+     *
      * @apiResourceModel \Modules\Timekeeping\Entities\TimeEntry
      */
     public function store(Request $request, CreateTimeEntryForUser $creator)
@@ -44,6 +46,7 @@ class TimeEntriesController extends Controller
      * Atualiza um ponto (marca como finalizado).
      *
      * @apiResource \App\Http\Resources\TimeEntryResource
+     *
      * @apiResourceModel \Modules\Timekeeping\Entities\TimeEntry
      */
     public function update(TimeEntry $entry, UpdateTimeEntry $updater)

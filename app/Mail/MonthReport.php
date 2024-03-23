@@ -32,7 +32,7 @@ class MonthReport extends Mailable implements ShouldQueue
     {
         $entries = $this->user->entries()
             ->where('started_at', '>=', $start = $this->reference->copy()->startOfMonth()->startOfDay())
-            ->where('ended_at', '<=' , $end = $this->reference->copy()->endOfMonth()->endOfDay())
+            ->where('ended_at', '<=', $end = $this->reference->copy()->endOfMonth()->endOfDay())
             ->whereNotNull('ended_at')
             ->get();
 

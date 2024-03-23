@@ -33,7 +33,7 @@ it('requests report', function () {
         $mail->assertSeeInHtml('Total: 3h');
 
         return $mail->reference->is($reference) && $mail->user->is($user);
-   });
+    });
 });
 
 it('requests report (for current month - without reference date)', function () {
@@ -61,7 +61,7 @@ it('requests report (for current month - without reference date)', function () {
         $mail->assertSeeInHtml('Total: 3h');
 
         return $mail->reference->is(now()) && $mail->user->is($user);
-   });
+    });
 });
 
 it('sends empty report', function () {
@@ -80,5 +80,5 @@ it('sends empty report', function () {
         $mail->assertSeeInHtml('Não há entradas');
 
         return $mail->reference->is($reference) && $mail->user->is($user);
-   });
+    });
 });
