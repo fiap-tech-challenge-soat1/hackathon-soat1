@@ -2,8 +2,6 @@
 
 namespace App\Mail;
 
-use App\Models\TimeEntry;
-use App\Models\User;
 use Illuminate\Bus\Queueable;
 use Illuminate\Contracts\Queue\ShouldQueue;
 use Illuminate\Database\Eloquent\Collection;
@@ -12,6 +10,8 @@ use Illuminate\Mail\Mailables\Content;
 use Illuminate\Mail\Mailables\Envelope;
 use Illuminate\Queue\SerializesModels;
 use Illuminate\Support\Carbon;
+use Modules\Timekeeping\Entities\TimeEntry;
+use Modules\User\Entities\User;
 
 class MonthReport extends Mailable implements ShouldQueue
 {

@@ -1,6 +1,6 @@
 <?php
 
-use App\Models\User;
+use Modules\User\Entities\User;
 
 it('issues a token', function () {
     $user = User::factory()->create([

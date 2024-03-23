@@ -1,9 +1,9 @@
 <?php
 
-namespace App\Policies;
+namespace Modules\Timekeeping\Policies;
 
-use App\Models\TimeEntry;
-use App\Models\User;
+use Modules\Timekeeping\Entities\TimeEntry;
+use Modules\User\Entities\User;
 
 class TimeEntryPolicy
 {

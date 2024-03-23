@@ -1,10 +1,10 @@
 <?php
 
 use App\Mail\MonthReport;
-use App\Models\TimeEntry;
-use App\Models\User;
 use Illuminate\Support\Facades\Mail;
 use Laravel\Sanctum\Sanctum;
+use Modules\Timekeeping\Entities\TimeEntry;
+use Modules\User\Entities\User;
 
 it('requests report', function () {
     Mail::fake();

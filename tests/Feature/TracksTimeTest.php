@@ -1,8 +1,8 @@
 <?php
 
-use App\Models\TimeEntry;
-use App\Models\User;
 use Laravel\Sanctum\Sanctum;
+use Modules\Timekeeping\Entities\TimeEntry;
+use Modules\User\Entities\User;
 
 it('starts a timer', function () {
     $user = User::factory()->create();
