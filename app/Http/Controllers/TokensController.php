@@ -14,6 +14,8 @@ class TokensController extends Controller
      * Criar token.
      *
      * @unauthenticated
+     * @bodyParam email string required O email do usuário.
+     * @bodyParam password string required A senha do usuário (em plaintext para autenticar)
      */
     public function store(Request $request, AuthenticateUser $auth, IssueTokenForUser $tokenCreator)
     {

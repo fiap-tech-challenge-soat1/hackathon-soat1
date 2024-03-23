@@ -10,6 +10,8 @@ class ReportsController extends Controller
 {
     /**
      * Gera um relatório do mês referência e envia para o usuário por email.
+     *
+     * @bodyParam referecen date A data de referencia (o relatório será gerado para o mês todo).
      */
     public function store(Request $request, GenerateReport $report)
     {

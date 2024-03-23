@@ -16,7 +16,7 @@ class GenerateReport
         ])->validate();
 
         Mail::to($user)->queue(new MonthReport(
-            $input['reference'] ? Carbon::parse($input['reference']) : now(),
+            ($input['reference'] ?? false) ? Carbon::parse($input['reference']) : now(),
             $user,
         ));
     }

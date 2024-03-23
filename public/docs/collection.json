@@ -10,7 +10,7 @@
     ],
     "info": {
         "name": "API - Sistema de Pontos",
-        "_postman_id": "336b7635-9e33-4066-bfb7-75afd4acceb1",
+        "_postman_id": "d1d5cdc6-d1e8-42ad-ba93-9750611eff25",
         "description": "API para o sistema de pontos.",
         "schema": "https:\/\/schema.getpostman.com\/json\/collection\/v2.1.0\/collection.json"
     },
@@ -41,7 +41,7 @@
                         ],
                         "body": {
                             "mode": "raw",
-                            "raw": "{\"email\":\"immanuel93@example.org\",\"password\":\"et\"}"
+                            "raw": "{\"email\":\"everardo.reichert@example.org\",\"password\":\">;@\\\/2'O.*\"}"
                         },
                         "description": "",
                         "auth": {
@@ -102,7 +102,7 @@
                         {
                             "header": [],
                             "code": 200,
-                            "body": "{\"data\":{\"id\":7,\"name\":\"Janae Kuphal Jr.\",\"email\":\"diego01@example.com\"}}",
+                            "body": "{\"data\":{\"id\":17,\"name\":\"Dr. Micaela Klocko PhD\",\"email\":\"gleason.mertie@example.net\"}}",
                             "name": ""
                         }
                     ]
@@ -134,7 +134,7 @@
                         {
                             "header": [],
                             "code": 200,
-                            "body": "{\"data\":[{\"id\":6,\"started_at\":\"2024-03-20T02:22:48.000000Z\",\"ended_at\":null},{\"id\":7,\"started_at\":\"2024-03-20T02:32:13.000000Z\",\"ended_at\":null}]}",
+                            "body": "{\"data\":[{\"id\":17,\"started_at\":\"2024-03-23T20:51:57.000000Z\",\"ended_at\":null},{\"id\":18,\"started_at\":\"2024-03-23T21:05:30.000000Z\",\"ended_at\":null}]}",
                             "name": ""
                         }
                     ]
@@ -166,7 +166,7 @@
                         {
                             "header": [],
                             "code": 200,
-                            "body": "{\"data\":{\"id\":8,\"started_at\":\"2024-03-20T02:28:38.000000Z\",\"ended_at\":null}}",
+                            "body": "{\"data\":{\"id\":19,\"started_at\":\"2024-03-23T20:46:24.000000Z\",\"ended_at\":null}}",
                             "name": ""
                         }
                     ]
@@ -183,7 +183,7 @@
                                 {
                                     "id": "entry_id",
                                     "key": "entry_id",
-                                    "value": "5",
+                                    "value": "1",
                                     "description": "The ID of the entry."
                                 }
                             ]
@@ -206,13 +206,13 @@
                         {
                             "header": [],
                             "code": 200,
-                            "body": "{\"data\":{\"id\":9,\"started_at\":\"2024-03-20T02:23:31.000000Z\",\"ended_at\":null}}",
+                            "body": "{\"data\":{\"id\":20,\"started_at\":\"2024-03-23T20:37:02.000000Z\",\"ended_at\":null}}",
                             "name": ""
                         }
                     ]
                 },
                 {
-                    "name": "POST api\/reports",
+                    "name": "Gera um relat\u00f3rio do m\u00eas refer\u00eancia e envia para o usu\u00e1rio por email.",
                     "request": {
                         "url": {
                             "host": "{{baseUrl}}",
@@ -233,7 +233,7 @@
                         ],
                         "body": {
                             "mode": "raw",
-                            "raw": "{\"reference\":\"2024-03-20T02:49:42\"}"
+                            "raw": "{\"referecen\":\"ut\"}"
                         },
                         "description": ""
                     },
