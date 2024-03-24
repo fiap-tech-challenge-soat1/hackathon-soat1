@@ -5,6 +5,9 @@ namespace App\Http\Resources;
 use Illuminate\Http\Request;
 use Illuminate\Http\Resources\Json\JsonResource;
 
+/**
+ * @property \Modules\Timekeeping\Entities\TimeEntry $resource
+ */
 class TimeEntryResource extends JsonResource
 {
     /**
@@ -15,9 +18,9 @@ class TimeEntryResource extends JsonResource
     public function toArray(Request $request): array
     {
         return [
-            'id' => $this->id,
-            'started_at' => $this->started_at,
-            'ended_at' => $this->ended_at,
+            'id' => $this->resource->id,
+            'started_at' => $this->resource->started_at,
+            'ended_at' => $this->resource->ended_at,
         ];
     }
 }

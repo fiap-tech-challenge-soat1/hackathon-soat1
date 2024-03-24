@@ -10,6 +10,9 @@ use Laravel\Sanctum\HasApiTokens;
 use Modules\Timekeeping\Entities\TimeEntry;
 use Modules\User\Database\Factories\UserFactory;
 
+/**
+ * @property string $password
+ */
 class User extends Authenticatable
 {
     use HasApiTokens, HasFactory, Notifiable;
@@ -56,7 +59,7 @@ class User extends Authenticatable
     /**
      * Create a new factory instance for the model.
      *
-     * @return \Illuminate\Database\Eloquent\Factories\Factory<static>
+     * @return \Modules\User\Database\Factories\UserFactory
      */
     protected static function newFactory()
     {

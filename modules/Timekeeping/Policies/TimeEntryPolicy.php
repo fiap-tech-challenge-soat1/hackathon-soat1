@@ -9,6 +9,6 @@ class TimeEntryPolicy
 {
     public function update(User $user, TimeEntry $entry): bool
     {
-        return $user->id === $entry->user_id;
+        return $user->is($entry->user);
     }
 }

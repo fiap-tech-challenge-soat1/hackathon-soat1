@@ -22,3 +22,6 @@ jobs:
 
       - name: Tests
         run: ./vendor/bin/pest --coverage --min=85
+
+      - name: Code Analysis (Static Analysis)
+        run: ./vendor/bin/pest --coverage --min=85

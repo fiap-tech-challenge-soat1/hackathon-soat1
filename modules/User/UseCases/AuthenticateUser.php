@@ -15,6 +15,7 @@ class AuthenticateUser
             'password' => ['required'],
         ])->validate();
 
+        /** @var \Modules\User\Entities\User|null $user */
         $user = User::query()->where('email', $input['email'])->first();
 
         if (! $user || ! Hash::check($input['password'], $user->password)) {

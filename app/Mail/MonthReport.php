@@ -57,13 +57,16 @@ class MonthReport extends Mailable implements ShouldQueue
         );
     }
 
+    /**
+     * @param \Illuminate\Database\Eloquent\Collection<array-key, \Modules\Timekeeping\Entities\TimeEntry> $entries
+     */
     private function total(Collection $entries): string
     {
         $start = $entries->first()?->started_at ?? now();
         $end = $entries->first()?->ended_at ?? now();
 
         $entries->skip(1)->each(function (TimeEntry $entry) use (&$end) {
-            $end = $end->add($entry->started_at->diffAsCarbonInterval($entry->ended_at));
+            $end = $end->copy()->add($entry->started_at->diffAsCarbonInterval($entry->ended_at));
         });
 
         return $start->shortAbsoluteDiffForHumans($end);
