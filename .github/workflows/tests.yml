@@ -23,5 +23,8 @@ jobs:
       - name: Tests
         run: ./vendor/bin/pest --coverage --min=85
 
+      - name: Formatting (Laravel Pint)
+        run: ./vendor/bin/pint --test --dirty
+
       - name: Code Analysis (Static Analysis)
-        run: ./vendor/bin/pest --coverage --min=85
+        run: ./vendor/bin/phpstan analyse --memory-limit=-1
