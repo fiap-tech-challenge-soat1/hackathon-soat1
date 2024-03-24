@@ -26,7 +26,7 @@ endpoints:
         name: email
         description: 'O email do usuário.'
         required: true
-        example: everardo.reichert@example.org
+        example: effertz.nicolas@example.org
         type: string
         enumValues: []
         exampleWasSpecified: false
@@ -35,14 +35,14 @@ endpoints:
         name: password
         description: 'A senha do usuário (em plaintext para autenticar)'
         required: true
-        example: ">;@/2'O.*"
+        example: '0t9m0_8H^mYj}M#P;VTx'
         type: string
         enumValues: []
         exampleWasSpecified: false
         custom: []
     cleanBodyParameters:
-      email: everardo.reichert@example.org
-      password: ">;@/2'O.*"
+      email: effertz.nicolas@example.org
+      password: '0t9m0_8H^mYj}M#P;VTx'
     fileParameters: []
     responses: []
     responseFields: []
@@ -80,7 +80,7 @@ endpoints:
     auth:
       - headers
       - Authorization
-      - 'Bearer dE6aZ548afvb6kPe3hD1gVc'
+      - 'Bearer h8bZ63dDP6eavVf4kEg15ca'
     controller: null
     method: null
     route: null
@@ -112,7 +112,7 @@ endpoints:
     responses:
       -
         status: 200
-        content: '{"data":{"id":17,"name":"Dr. Micaela Klocko PhD","email":"gleason.mertie@example.net"}}'
+        content: '{"data":{"id":27,"name":"Domenico Borer","email":"zrunolfsson@example.net"}}'
         headers: []
         description: ''
         custom: []
@@ -120,7 +120,7 @@ endpoints:
     auth:
       - headers
       - Authorization
-      - 'Bearer av6VcDk83dEab6ef1ZgP4h5'
+      - 'Bearer vd6VfZaaEbPg16354ekc8hD'
     controller: null
     method: null
     route: null
@@ -152,7 +152,7 @@ endpoints:
     responses:
       -
         status: 200
-        content: '{"data":[{"id":17,"started_at":"2024-03-23T20:51:57.000000Z","ended_at":null},{"id":18,"started_at":"2024-03-23T21:05:30.000000Z","ended_at":null}]}'
+        content: '{"data":[{"id":25,"started_at":"2024-03-24T21:47:10.000000Z","ended_at":null},{"id":26,"started_at":"2024-03-24T21:32:45.000000Z","ended_at":null}]}'
         headers: []
         description: ''
         custom: []
@@ -160,7 +160,7 @@ endpoints:
     auth:
       - headers
       - Authorization
-      - 'Bearer Zv86gDah4beE15V3Pkfadc6'
+      - 'Bearer dE1akef6PDV8avb6gZ4h53c'
     controller: null
     method: null
     route: null
@@ -192,7 +192,7 @@ endpoints:
     responses:
       -
         status: 200
-        content: '{"data":{"id":19,"started_at":"2024-03-23T20:46:24.000000Z","ended_at":null}}'
+        content: '{"data":{"id":27,"started_at":"2024-03-24T22:05:46.000000Z","ended_at":null}}'
         headers: []
         description: ''
         custom: []
@@ -200,7 +200,7 @@ endpoints:
     auth:
       - headers
       - Authorization
-      - 'Bearer 86Efh5vPd6V43ebDkZaag1c'
+      - 'Bearer Ed3gV4b86Pc1ZDa56evkhfa'
     controller: null
     method: null
     route: null
@@ -243,7 +243,7 @@ endpoints:
     responses:
       -
         status: 200
-        content: '{"data":{"id":20,"started_at":"2024-03-23T20:37:02.000000Z","ended_at":null}}'
+        content: '{"data":{"id":28,"started_at":"2024-03-24T21:25:18.000000Z","ended_at":null}}'
         headers: []
         description: ''
         custom: []
@@ -251,7 +251,7 @@ endpoints:
     auth:
       - headers
       - Authorization
-      - 'Bearer 86hk6bdZEe1vVP4gfa3acD5'
+      - 'Bearer 48a3gceEPhDvVfb661aZdk5'
     controller: null
     method: null
     route: null
@@ -282,20 +282,20 @@ endpoints:
         name: referecen
         description: 'A data de referencia (o relatório será gerado para o mês todo).'
         required: false
-        example: ut
+        example: magnam
         type: date
         enumValues: []
         exampleWasSpecified: false
         custom: []
     cleanBodyParameters:
-      referecen: ut
+      referecen: magnam
     fileParameters: []
     responses: []
     responseFields: []
     auth:
       - headers
       - Authorization
-      - 'Bearer dva816h4EcfDZab3ek5PVg6'
+      - 'Bearer 1fdvDE6b3e5kh46Z8caVgPa'
     controller: null
     method: null
     route: null

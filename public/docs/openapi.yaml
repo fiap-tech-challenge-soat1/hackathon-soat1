@@ -5,7 +5,7 @@ info:
   version: 1.0.0
 servers:
   -
-    url: 'http://localhost'
+    url: 'https://keiqbj3hbxvoifpl7jcg5jfsxm0hfbni.lambda-url.sa-east-1.on.aws'
 paths:
   /api/login:
     post:
@@ -26,11 +26,11 @@ paths:
                 email:
                   type: string
                   description: 'O email do usuário.'
-                  example: everardo.reichert@example.org
+                  example: effertz.nicolas@example.org
                 password:
                   type: string
                   description: 'A senha do usuário (em plaintext para autenticar)'
-                  example: ">;@/2'O.*"
+                  example: '0t9m0_8H^mYj}M#P;VTx'
               required:
                 - email
                 - password
@@ -59,22 +59,22 @@ paths:
                 type: object
                 example:
                   data:
-                    id: 17
-                    name: 'Dr. Micaela Klocko PhD'
-                    email: gleason.mertie@example.net
+                    id: 27
+                    name: 'Domenico Borer'
+                    email: zrunolfsson@example.net
                 properties:
                   data:
                     type: object
                     properties:
                       id:
                         type: integer
-                        example: 17
+                        example: 27
                       name:
                         type: string
-                        example: 'Dr. Micaela Klocko PhD'
+                        example: 'Domenico Borer'
                       email:
                         type: string
-                        example: gleason.mertie@example.net
+                        example: zrunolfsson@example.net
       tags:
         - Endpoints
   /api/time-entries:
@@ -93,34 +93,34 @@ paths:
                 example:
                   data:
                     -
-                      id: 17
-                      started_at: '2024-03-23T20:51:57.000000Z'
+                      id: 25
+                      started_at: '2024-03-24T21:47:10.000000Z'
                       ended_at: null
                     -
-                      id: 18
-                      started_at: '2024-03-23T21:05:30.000000Z'
+                      id: 26
+                      started_at: '2024-03-24T21:32:45.000000Z'
                       ended_at: null
                 properties:
                   data:
                     type: array
                     example:
                       -
-                        id: 17
-                        started_at: '2024-03-23T20:51:57.000000Z'
+                        id: 25
+                        started_at: '2024-03-24T21:47:10.000000Z'
                         ended_at: null
                       -
-                        id: 18
-                        started_at: '2024-03-23T21:05:30.000000Z'
+                        id: 26
+                        started_at: '2024-03-24T21:32:45.000000Z'
                         ended_at: null
                     items:
                       type: object
                       properties:
                         id:
                           type: integer
-                          example: 17
+                          example: 25
                         started_at:
                           type: string
-                          example: '2024-03-23T20:51:57.000000Z'
+                          example: '2024-03-24T21:47:10.000000Z'
                         ended_at:
                           type: string
                           example: null
@@ -140,8 +140,8 @@ paths:
                 type: object
                 example:
                   data:
-                    id: 19
-                    started_at: '2024-03-23T20:46:24.000000Z'
+                    id: 27
+                    started_at: '2024-03-24T22:05:46.000000Z'
                     ended_at: null
                 properties:
                   data:
@@ -149,10 +149,10 @@ paths:
                     properties:
                       id:
                         type: integer
-                        example: 19
+                        example: 27
                       started_at:
                         type: string
-                        example: '2024-03-23T20:46:24.000000Z'
+                        example: '2024-03-24T22:05:46.000000Z'
                       ended_at:
                         type: string
                         example: null
@@ -173,8 +173,8 @@ paths:
                 type: object
                 example:
                   data:
-                    id: 20
-                    started_at: '2024-03-23T20:37:02.000000Z'
+                    id: 28
+                    started_at: '2024-03-24T21:25:18.000000Z'
                     ended_at: null
                 properties:
                   data:
@@ -182,10 +182,10 @@ paths:
                     properties:
                       id:
                         type: integer
-                        example: 20
+                        example: 28
                       started_at:
                         type: string
-                        example: '2024-03-23T20:37:02.000000Z'
+                        example: '2024-03-24T21:25:18.000000Z'
                       ended_at:
                         type: string
                         example: null
@@ -219,7 +219,7 @@ paths:
                 referecen:
                   type: date
                   description: 'A data de referencia (o relatório será gerado para o mês todo).'
-                  example: ut
+                  example: magnam
 tags:
   -
     name: Endpoints

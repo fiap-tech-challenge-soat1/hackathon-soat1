@@ -26,7 +26,7 @@
             </style>
 
     <script>
-        var tryItOutBaseUrl = "http://localhost";
+        var tryItOutBaseUrl = "https://keiqbj3hbxvoifpl7jcg5jfsxm0hfbni.lambda-url.sa-east-1.on.aws";
         var useCsrf = Boolean();
         var csrfUrl = "/sanctum/csrf-cookie";
     </script>
@@ -103,7 +103,7 @@
     </ul>
 
     <ul class="toc-footer" id="last-updated">
-        <li>Last updated: March 23, 2024</li>
+        <li>Last updated: March 24, 2024</li>
     </ul>
 </div>
 
@@ -113,7 +113,7 @@
         <h1 id="introducao">Introdução</h1>
 <p>API para o sistema de pontos.</p>
 <aside>
-    <strong>URL Base</strong>: <code>http://localhost</code>
+    <strong>URL Base</strong>: <code>https://keiqbj3hbxvoifpl7jcg5jfsxm0hfbni.lambda-url.sa-east-1.on.aws</code>
 </aside>
 <p>Essa documentação contêm informações sobre os endpoints disponíveis para consumo da API.</p>
 <aside>Aqui você vai encontrar vários exemplos sobre como as requisições e respostas que você deve enviar para cada endpoint.</aside>
@@ -139,19 +139,19 @@
 
 <div class="bash-example">
     <pre><code class="language-bash">curl --request POST \
-    "http://localhost/api/login" \
+    "https://keiqbj3hbxvoifpl7jcg5jfsxm0hfbni.lambda-url.sa-east-1.on.aws/api/login" \
     --header "Content-Type: application/json" \
     --header "Accept: application/json" \
     --data "{
-    \"email\": \"everardo.reichert@example.org\",
-    \"password\": \"&gt;;@\\/2\'O.*\"
+    \"email\": \"effertz.nicolas@example.org\",
+    \"password\": \"0t9m0_8H^mYj}M#P;VTx\"
 }"
 </code></pre></div>
 
 
 <div class="javascript-example">
     <pre><code class="language-javascript">const url = new URL(
-    "http://localhost/api/login"
+    "https://keiqbj3hbxvoifpl7jcg5jfsxm0hfbni.lambda-url.sa-east-1.on.aws/api/login"
 );
 
 const headers = {
@@ -160,8 +160,8 @@ const headers = {
 };
 
 let body = {
-    "email": "everardo.reichert@example.org",
-    "password": "&gt;;@\/2'O.*"
+    "email": "effertz.nicolas@example.org",
+    "password": "0t9m0_8H^mYj}M#P;VTx"
 };
 
 fetch(url, {
@@ -250,10 +250,10 @@ Você pode olhar o console de Dev Tools para depurar as informações.</code></p
  &nbsp;
                 <input type="text" style="display: none"
                               name="email"                data-endpoint="POSTapi-login"
-               value="everardo.reichert@example.org"
+               value="effertz.nicolas@example.org"
                data-component="body">
     <br>
-<p>O email do usuário. Example: <code>everardo.reichert@example.org</code></p>
+<p>O email do usuário. Example: <code>effertz.nicolas@example.org</code></p>
         </div>
                 <div style=" padding-left: 28px;  clear: unset;">
             <b style="line-height: 2;"><code>password</code></b>&nbsp;&nbsp;
@@ -261,10 +261,10 @@ Você pode olhar o console de Dev Tools para depurar as informações.</code></p
  &nbsp;
                 <input type="text" style="display: none"
                               name="password"                data-endpoint="POSTapi-login"
-               value=">;@/2'O.*"
+               value="0t9m0_8H^mYj}M#P;VTx"
                data-component="body">
     <br>
-<p>A senha do usuário (em plaintext para autenticar) Example: <code>&gt;;@/2'O.*</code></p>
+<p>A senha do usuário (em plaintext para autenticar) Example: <code>0t9m0_8H^mYj}M#P;VTx</code></p>
         </div>
         </form>
 
@@ -282,7 +282,7 @@ Você pode olhar o console de Dev Tools para depurar as informações.</code></p
 
 <div class="bash-example">
     <pre><code class="language-bash">curl --request DELETE \
-    "http://localhost/api/logout" \
+    "https://keiqbj3hbxvoifpl7jcg5jfsxm0hfbni.lambda-url.sa-east-1.on.aws/api/logout" \
     --header "Authorization: Bearer {SEU_TOKEN_AQUI}" \
     --header "Content-Type: application/json" \
     --header "Accept: application/json"</code></pre></div>
@@ -290,7 +290,7 @@ Você pode olhar o console de Dev Tools para depurar as informações.</code></p
 
 <div class="javascript-example">
     <pre><code class="language-javascript">const url = new URL(
-    "http://localhost/api/logout"
+    "https://keiqbj3hbxvoifpl7jcg5jfsxm0hfbni.lambda-url.sa-east-1.on.aws/api/logout"
 );
 
 const headers = {
@@ -404,7 +404,7 @@ Você pode olhar o console de Dev Tools para depurar as informações.</code></p
 
 <div class="bash-example">
     <pre><code class="language-bash">curl --request GET \
-    --get "http://localhost/api/user" \
+    --get "https://keiqbj3hbxvoifpl7jcg5jfsxm0hfbni.lambda-url.sa-east-1.on.aws/api/user" \
     --header "Authorization: Bearer {SEU_TOKEN_AQUI}" \
     --header "Content-Type: application/json" \
     --header "Accept: application/json"</code></pre></div>
@@ -412,7 +412,7 @@ Você pode olhar o console de Dev Tools para depurar as informações.</code></p
 
 <div class="javascript-example">
     <pre><code class="language-javascript">const url = new URL(
-    "http://localhost/api/user"
+    "https://keiqbj3hbxvoifpl7jcg5jfsxm0hfbni.lambda-url.sa-east-1.on.aws/api/user"
 );
 
 const headers = {
@@ -436,9 +436,9 @@ fetch(url, {
 
 <code class="language-json" style="max-height: 300px;">{
     &quot;data&quot;: {
-        &quot;id&quot;: 17,
-        &quot;name&quot;: &quot;Dr. Micaela Klocko PhD&quot;,
-        &quot;email&quot;: &quot;gleason.mertie@example.net&quot;
+        &quot;id&quot;: 27,
+        &quot;name&quot;: &quot;Domenico Borer&quot;,
+        &quot;email&quot;: &quot;zrunolfsson@example.net&quot;
     }
 }</code>
  </pre>
@@ -539,7 +539,7 @@ Você pode olhar o console de Dev Tools para depurar as informações.</code></p
 
 <div class="bash-example">
     <pre><code class="language-bash">curl --request GET \
-    --get "http://localhost/api/time-entries" \
+    --get "https://keiqbj3hbxvoifpl7jcg5jfsxm0hfbni.lambda-url.sa-east-1.on.aws/api/time-entries" \
     --header "Authorization: Bearer {SEU_TOKEN_AQUI}" \
     --header "Content-Type: application/json" \
     --header "Accept: application/json"</code></pre></div>
@@ -547,7 +547,7 @@ Você pode olhar o console de Dev Tools para depurar as informações.</code></p
 
 <div class="javascript-example">
     <pre><code class="language-javascript">const url = new URL(
-    "http://localhost/api/time-entries"
+    "https://keiqbj3hbxvoifpl7jcg5jfsxm0hfbni.lambda-url.sa-east-1.on.aws/api/time-entries"
 );
 
 const headers = {
@@ -572,13 +572,13 @@ fetch(url, {
 <code class="language-json" style="max-height: 300px;">{
     &quot;data&quot;: [
         {
-            &quot;id&quot;: 17,
-            &quot;started_at&quot;: &quot;2024-03-23T20:51:57.000000Z&quot;,
+            &quot;id&quot;: 25,
+            &quot;started_at&quot;: &quot;2024-03-24T21:47:10.000000Z&quot;,
             &quot;ended_at&quot;: null
         },
         {
-            &quot;id&quot;: 18,
-            &quot;started_at&quot;: &quot;2024-03-23T21:05:30.000000Z&quot;,
+            &quot;id&quot;: 26,
+            &quot;started_at&quot;: &quot;2024-03-24T21:32:45.000000Z&quot;,
             &quot;ended_at&quot;: null
         }
     ]
@@ -681,7 +681,7 @@ Você pode olhar o console de Dev Tools para depurar as informações.</code></p
 
 <div class="bash-example">
     <pre><code class="language-bash">curl --request POST \
-    "http://localhost/api/time-entries" \
+    "https://keiqbj3hbxvoifpl7jcg5jfsxm0hfbni.lambda-url.sa-east-1.on.aws/api/time-entries" \
     --header "Authorization: Bearer {SEU_TOKEN_AQUI}" \
     --header "Content-Type: application/json" \
     --header "Accept: application/json"</code></pre></div>
@@ -689,7 +689,7 @@ Você pode olhar o console de Dev Tools para depurar as informações.</code></p
 
 <div class="javascript-example">
     <pre><code class="language-javascript">const url = new URL(
-    "http://localhost/api/time-entries"
+    "https://keiqbj3hbxvoifpl7jcg5jfsxm0hfbni.lambda-url.sa-east-1.on.aws/api/time-entries"
 );
 
 const headers = {
@@ -713,8 +713,8 @@ fetch(url, {
 
 <code class="language-json" style="max-height: 300px;">{
     &quot;data&quot;: {
-        &quot;id&quot;: 19,
-        &quot;started_at&quot;: &quot;2024-03-23T20:46:24.000000Z&quot;,
+        &quot;id&quot;: 27,
+        &quot;started_at&quot;: &quot;2024-03-24T22:05:46.000000Z&quot;,
         &quot;ended_at&quot;: null
     }
 }</code>
@@ -816,7 +816,7 @@ Você pode olhar o console de Dev Tools para depurar as informações.</code></p
 
 <div class="bash-example">
     <pre><code class="language-bash">curl --request PUT \
-    "http://localhost/api/time-entries/1" \
+    "https://keiqbj3hbxvoifpl7jcg5jfsxm0hfbni.lambda-url.sa-east-1.on.aws/api/time-entries/1" \
     --header "Authorization: Bearer {SEU_TOKEN_AQUI}" \
     --header "Content-Type: application/json" \
     --header "Accept: application/json"</code></pre></div>
@@ -824,7 +824,7 @@ Você pode olhar o console de Dev Tools para depurar as informações.</code></p
 
 <div class="javascript-example">
     <pre><code class="language-javascript">const url = new URL(
-    "http://localhost/api/time-entries/1"
+    "https://keiqbj3hbxvoifpl7jcg5jfsxm0hfbni.lambda-url.sa-east-1.on.aws/api/time-entries/1"
 );
 
 const headers = {
@@ -848,8 +848,8 @@ fetch(url, {
 
 <code class="language-json" style="max-height: 300px;">{
     &quot;data&quot;: {
-        &quot;id&quot;: 20,
-        &quot;started_at&quot;: &quot;2024-03-23T20:37:02.000000Z&quot;,
+        &quot;id&quot;: 28,
+        &quot;started_at&quot;: &quot;2024-03-24T21:25:18.000000Z&quot;,
         &quot;ended_at&quot;: null
     }
 }</code>
@@ -967,19 +967,19 @@ Você pode olhar o console de Dev Tools para depurar as informações.</code></p
 
 <div class="bash-example">
     <pre><code class="language-bash">curl --request POST \
-    "http://localhost/api/reports" \
+    "https://keiqbj3hbxvoifpl7jcg5jfsxm0hfbni.lambda-url.sa-east-1.on.aws/api/reports" \
     --header "Authorization: Bearer {SEU_TOKEN_AQUI}" \
     --header "Content-Type: application/json" \
     --header "Accept: application/json" \
     --data "{
-    \"referecen\": \"ut\"
+    \"referecen\": \"magnam\"
 }"
 </code></pre></div>
 
 
 <div class="javascript-example">
     <pre><code class="language-javascript">const url = new URL(
-    "http://localhost/api/reports"
+    "https://keiqbj3hbxvoifpl7jcg5jfsxm0hfbni.lambda-url.sa-east-1.on.aws/api/reports"
 );
 
 const headers = {
@@ -989,7 +989,7 @@ const headers = {
 };
 
 let body = {
-    "referecen": "ut"
+    "referecen": "magnam"
 };
 
 fetch(url, {
@@ -1089,10 +1089,10 @@ Você pode olhar o console de Dev Tools para depurar as informações.</code></p
 <i>optional</i> &nbsp;
                 <input type="text" style="display: none"
                               name="referecen"                data-endpoint="POSTapi-reports"
-               value="ut"
+               value="magnam"
                data-component="body">
     <br>
-<p>A data de referencia (o relatório será gerado para o mês todo). Example: <code>ut</code></p>
+<p>A data de referencia (o relatório será gerado para o mês todo). Example: <code>magnam</code></p>
         </div>
         </form>
 
