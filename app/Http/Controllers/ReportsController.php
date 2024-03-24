@@ -2,23 +2,20 @@
 
 namespace App\Http\Controllers;
 
-use App\Mail\MonthReport;
 use Illuminate\Http\Request;
 use Illuminate\Http\Response;
-use Illuminate\Support\Facades\Mail;
+use Modules\Timekeeping\UseCases\GenerateReport;
 
 class ReportsController extends Controller
 {
-    public function store(Request $request)
+    /**
+     * Gera um relatório do mês referência e envia para o usuário por email.
+     *
+     * @bodyParam referecen date A data de referencia (o relatório será gerado para o mês todo).
+     */
+    public function store(Request $request, GenerateReport $report)
     {
-        $request->validate([
-            'reference' => ['nullable', 'date'],
-        ]);
-
-        Mail::to($request->user())->queue(new MonthReport(
-            $request->date('reference') ?: now(),
-            $request->user(),
-        ));
+        $report->handle($request->user(), $request->all());
 
         return response(status: Response::HTTP_ACCEPTED);
     }

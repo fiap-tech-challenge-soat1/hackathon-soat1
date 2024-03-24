@@ -1,17 +1,21 @@
 <?php
 
-namespace App\Models;
+namespace Modules\User\Entities;
 
-// use Illuminate\Contracts\Auth\MustVerifyEmail;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Relations\HasMany;
 use Illuminate\Foundation\Auth\User as Authenticatable;
 use Illuminate\Notifications\Notifiable;
 use Laravel\Sanctum\HasApiTokens;
+use Modules\Timekeeping\Entities\TimeEntry;
+use Modules\User\Database\Factories\UserFactory;
 
+/**
+ * @property string $password
+ */
 class User extends Authenticatable
 {
-    use HasFactory, Notifiable, HasApiTokens;
+    use HasApiTokens, HasFactory, Notifiable;
 
     /**
      * The attributes that are mass assignable.
@@ -34,6 +38,11 @@ class User extends Authenticatable
         'remember_token',
     ];
 
+    public function entries(): HasMany
+    {
+        return $this->hasMany(TimeEntry::class);
+    }
+
     /**
      * Get the attributes that should be cast.
      *
@@ -47,8 +56,13 @@ class User extends Authenticatable
         ];
     }
 
-    public function entries(): HasMany
+    /**
+     * Create a new factory instance for the model.
+     *
+     * @return \Modules\User\Database\Factories\UserFactory
+     */
+    protected static function newFactory()
     {
-        return $this->hasMany(TimeEntry::class);
+        return UserFactory::new();
     }
 }

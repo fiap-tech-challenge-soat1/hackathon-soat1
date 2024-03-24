@@ -1,11 +1,17 @@
 <?php
 
-namespace App\Models;
+namespace Modules\Timekeeping\Entities;
 
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Relations\BelongsTo;
+use Modules\Timekeeping\Database\Factories\TimeEntryFactory;
+use Modules\User\Entities\User;
 
+/**
+ * @property \Illuminate\Support\Carbon $started_at
+ * @property \Illuminate\Support\Carbon|null $ended_at
+ */
 class TimeEntry extends Model
 {
     use HasFactory;
@@ -28,5 +34,15 @@ class TimeEntry extends Model
             'started_at' => 'datetime',
             'ended_at' => 'datetime',
         ];
+    }
+
+    /**
+     * Create a new factory instance for the model.
+     *
+     * @return \Modules\Timekeeping\Database\Factories\TimeEntryFactory
+     */
+    protected static function newFactory()
+    {
+        return TimeEntryFactory::new();
     }
 }

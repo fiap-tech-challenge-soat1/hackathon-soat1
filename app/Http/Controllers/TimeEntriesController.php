@@ -3,9 +3,12 @@
 namespace App\Http\Controllers;
 
 use App\Http\Resources\TimeEntryResource;
-use App\Models\TimeEntry;
 use Illuminate\Foundation\Auth\Access\AuthorizesRequests;
 use Illuminate\Http\Request;
+use Modules\Timekeeping\Entities\TimeEntry;
+use Modules\Timekeeping\UseCases\CreateTimeEntryForUser;
+use Modules\Timekeeping\UseCases\ListEntriesForUser;
+use Modules\Timekeeping\UseCases\UpdateTimeEntry;
 
 class TimeEntriesController extends Controller
 {
@@ -15,12 +18,13 @@ class TimeEntriesController extends Controller
      * Lista os pontos do usuário atual.
      *
      * @apiResourceCollection \App\Http\Resources\TimeEntryResource
-     * @apiResourceModel \App\Models\TimeEntry
+     *
+     * @apiResourceModel \Modules\Timekeeping\Entities\TimeEntry
      */
-    public function index(Request $request)
+    public function index(Request $request, ListEntriesForUser $lister)
     {
         return TimeEntryResource::collection(
-            $request->user()->entries()->latest()->get(),
+            $lister->handle($request->user()->id)
         );
     }
 
@@ -28,27 +32,27 @@ class TimeEntriesController extends Controller
      * Registra um novo ponto.
      *
      * @apiResource \App\Http\Resources\TimeEntryResource
-     * @apiResourceModel \App\Models\TimeEntry
+     *
+     * @apiResourceModel \Modules\Timekeeping\Entities\TimeEntry
      */
-    public function store(Request $request)
+    public function store(Request $request, CreateTimeEntryForUser $creator)
     {
-        return TimeEntryResource::make($request->user()->entries()->create([
-            'started_at' => now(),
-        ]));
+        return TimeEntryResource::make(
+            $creator->handle($request->user()->id)
+        );
     }
 
     /**
      * Atualiza um ponto (marca como finalizado).
      *
      * @apiResource \App\Http\Resources\TimeEntryResource
-     * @apiResourceModel \App\Models\TimeEntry
+     *
+     * @apiResourceModel \Modules\Timekeeping\Entities\TimeEntry
      */
-    public function update(TimeEntry $entry)
+    public function update(TimeEntry $entry, UpdateTimeEntry $updater)
     {
-        $this->authorize('update', $entry);
-
-        return TimeEntryResource::make(tap($entry)->update([
-            'ended_at' => $entry->ended_at ?? now(),
-        ]));
+        return TimeEntryResource::make(
+            $updater->handle($entry)
+        );
     }
 }

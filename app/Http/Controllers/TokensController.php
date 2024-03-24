@@ -3,11 +3,10 @@
 namespace App\Http\Controllers;
 
 use App\Http\Resources\UserResource;
-use App\Models\User;
 use Illuminate\Http\Request;
-use Illuminate\Support\Facades\Hash;
-use Illuminate\Validation\ValidationException;
-use Laravel\Sanctum\PersonalAccessToken;
+use Modules\User\UseCases\AuthenticateUser;
+use Modules\User\UseCases\IssueTokenForUser;
+use Modules\User\UseCases\RevokeToken;
 
 class TokensController extends Controller
 {
@@ -15,25 +14,14 @@ class TokensController extends Controller
      * Criar token.
      *
      * @unauthenticated
+     *
+     * @bodyParam email string required O email do usuário.
+     * @bodyParam password string required A senha do usuário (em plaintext para autenticar)
      */
-    public function store(Request $request)
+    public function store(Request $request, AuthenticateUser $auth, IssueTokenForUser $tokenCreator)
     {
-        $request->validate([
-            'email' => ['required', 'email'],
-            'password' => ['required'],
-        ]);
-
-        $user = User::where('email', $request->email)->first();
-
-        if (! $user || ! Hash::check($request->password, $user->password)) {
-            throw ValidationException::withMessages([
-                'email' => ['The provided credentials are incorrect.'],
-            ]);
-        }
-
-        $token = $user->createToken(sprintf(
-            'Created at %s', now()->toDateString(),
-        ));
+        $user = $auth->handle($request->all());
+        $token = $tokenCreator->handle($user);
 
         return response()->json([
             'token' => $token->plainTextToken,
@@ -44,11 +32,9 @@ class TokensController extends Controller
     /**
      * Revoga o token atual.
      */
-    public function destroy(Request $request)
+    public function destroy(Request $request, RevokeToken $revoker)
     {
-        $token = PersonalAccessToken::findToken($request->bearerToken());
-
-        $token?->delete();
+        $revoker->handle($request->bearerToken());
 
         return response()->noContent();
     }

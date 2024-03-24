@@ -5,12 +5,12 @@
             "key": "baseUrl",
             "type": "string",
             "name": "string",
-            "value": "http:\/\/localhost"
+            "value": "https:\/\/keiqbj3hbxvoifpl7jcg5jfsxm0hfbni.lambda-url.sa-east-1.on.aws"
         }
     ],
     "info": {
         "name": "API - Sistema de Pontos",
-        "_postman_id": "336b7635-9e33-4066-bfb7-75afd4acceb1",
+        "_postman_id": "b7aea8fd-263b-49ab-8951-5ad1a337ade3",
         "description": "API para o sistema de pontos.",
         "schema": "https:\/\/schema.getpostman.com\/json\/collection\/v2.1.0\/collection.json"
     },
@@ -41,7 +41,7 @@
                         ],
                         "body": {
                             "mode": "raw",
-                            "raw": "{\"email\":\"immanuel93@example.org\",\"password\":\"et\"}"
+                            "raw": "{\"email\":\"effertz.nicolas@example.org\",\"password\":\"0t9m0_8H^mYj}M#P;VTx\"}"
                         },
                         "description": "",
                         "auth": {
@@ -102,7 +102,7 @@
                         {
                             "header": [],
                             "code": 200,
-                            "body": "{\"data\":{\"id\":7,\"name\":\"Janae Kuphal Jr.\",\"email\":\"diego01@example.com\"}}",
+                            "body": "{\"data\":{\"id\":27,\"name\":\"Domenico Borer\",\"email\":\"zrunolfsson@example.net\"}}",
                             "name": ""
                         }
                     ]
@@ -134,7 +134,7 @@
                         {
                             "header": [],
                             "code": 200,
-                            "body": "{\"data\":[{\"id\":6,\"started_at\":\"2024-03-20T02:22:48.000000Z\",\"ended_at\":null},{\"id\":7,\"started_at\":\"2024-03-20T02:32:13.000000Z\",\"ended_at\":null}]}",
+                            "body": "{\"data\":[{\"id\":25,\"started_at\":\"2024-03-24T21:47:10.000000Z\",\"ended_at\":null},{\"id\":26,\"started_at\":\"2024-03-24T21:32:45.000000Z\",\"ended_at\":null}]}",
                             "name": ""
                         }
                     ]
@@ -166,7 +166,7 @@
                         {
                             "header": [],
                             "code": 200,
-                            "body": "{\"data\":{\"id\":8,\"started_at\":\"2024-03-20T02:28:38.000000Z\",\"ended_at\":null}}",
+                            "body": "{\"data\":{\"id\":27,\"started_at\":\"2024-03-24T22:05:46.000000Z\",\"ended_at\":null}}",
                             "name": ""
                         }
                     ]
@@ -183,7 +183,7 @@
                                 {
                                     "id": "entry_id",
                                     "key": "entry_id",
-                                    "value": "5",
+                                    "value": "1",
                                     "description": "The ID of the entry."
                                 }
                             ]
@@ -206,13 +206,13 @@
                         {
                             "header": [],
                             "code": 200,
-                            "body": "{\"data\":{\"id\":9,\"started_at\":\"2024-03-20T02:23:31.000000Z\",\"ended_at\":null}}",
+                            "body": "{\"data\":{\"id\":28,\"started_at\":\"2024-03-24T21:25:18.000000Z\",\"ended_at\":null}}",
                             "name": ""
                         }
                     ]
                 },
                 {
-                    "name": "POST api\/reports",
+                    "name": "Gera um relat\u00f3rio do m\u00eas refer\u00eancia e envia para o usu\u00e1rio por email.",
                     "request": {
                         "url": {
                             "host": "{{baseUrl}}",
@@ -233,7 +233,7 @@
                         ],
                         "body": {
                             "mode": "raw",
-                            "raw": "{\"reference\":\"2024-03-20T02:49:42\"}"
+                            "raw": "{\"referecen\":\"magnam\"}"
                         },
                         "description": ""
                     },

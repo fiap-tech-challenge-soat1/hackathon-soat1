@@ -11,7 +11,8 @@ class UserController extends Controller
      * Ver usuário atual.
      *
      * @apiResource \App\Http\Resources\UserResource
-     * @apiResourceModel \App\Models\User
+     *
+     * @apiResourceModel \Modules\User\Entities\User
      */
     public function show(Request $request)
     {
