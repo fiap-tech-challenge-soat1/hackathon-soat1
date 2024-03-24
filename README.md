@@ -1,19 +1,63 @@
-# Hackathon Timer App
+# Descrição
 
-App para competição do Hackathon.
+Serviço para contabilização de ponto (horas trabalhadas) do Hackathon do FIAP.
 
-### Subir Aplicação
+### Como Rodar a Aplicação Localmente
+
+Estamos usando Docker e Docker Compose para rodar a aplicação localmente. Dispomos de um [Dockerfile](./Dockerfile) com a instruções de instalação das dependencias necessárias e também de executação da mesma.
+
+Para rodar a aplicação, siga os passos abaixos:
+
+1. Crie o arquivo `.env`, instale as dependencias via Composer, e gere a `APP_KEY`:
+
+```bash
+cp .env.example .env
+docker compose run --rm app composer install
+docker compose run --rm app php artisan key:generate
+```
+
+2. Suba os serviços (Web, Database/MySQL, SMTP/Mailpit):
 
 ```bash
 docker compose up -d
 ```
 
-### Gerar Documentação
-
-Para gerar a documentação, primeiro precisa subir a aplicação (o Scribe vai fazer uns requests). Depois, é só rodar:
+3. Execute as migrations e seeder para criar o usuário teste:
 
 ```bash
-docker compose exec app php artisan scribe:generate
+docker compose exec app php artisan migrate --seed
 ```
 
-A documentação vai estar disponível em [localhost/docs](http://localhost/docs).
+Talvez você tenha que esperar alguns segundos para o container do MySQL subir e ficar disponível.
+
+Isso é tudo.
+
+### Justificativa da Arquitetura Escolhida
+
+Optamos por usar um framework monolitíco, apenas aplicando uma leve modularização em cima da estrutura padrão mesmo. O Laravel, o framework escolhido, permite esse tipo de customização.
+
+Temos dois módulos: `User` e `Timekeeping`.
+
+#### Módulo `User`
+
+Esse módulo deve englobar tudo relacionado a usuários e autenticação. A entidade _aggregate_ aqui é o model `User`. Podemos encontrar também os arquivos de migrações (para alterações automatizadas da entrutura do banco de dados), e as fábricas de modelos (para facilitar a fabricação de modelos nos testes). Os casos de uso (serviços) podem ser encontrados aqui também.
+
+#### Módulo `Timekeeping`
+
+Esse módulo deve englobar tudo relacionado ao domínio de pontos (horas trabalhadas). A entidade _aggregate_ aqui é o model `TimeEntry`. Podemos encontrar também os arquivos de migrações (para alterações automatizadas da entrutura do banco de dados), e as fábricas de modelos (para facilitar a fabricação de modelos nos testes). Os casos de uso (serviços) podem ser encontrados aqui também.
+
+#### Relatórios OWASP ZAP
+
+Ao executar o ZAP em alguns endpoints (registrar ponto e atualizar ponto), não identificamos nenhuma vulnerabilidade alta, dessa forma foi não necessário gerar um relatório do antes e um do depois.
+
+Link para o relatório: [2024-03-24-ZAP-Report.pdf](./resources//docs/2024-03-24-ZAP-Report.pdf)
+
+#### Desenho da Arquitetura
+
+Arquitetura da aplicação:
+
+![Arquitetura](./resources/docs/arquitetura.png)
+
+#### Video de Apresentação
+
+Vídeo no YouTube: PENDING
