@@ -36,7 +36,15 @@ Isso é tudo.
 
 Optamos por usar um framework monolitíco, apenas aplicando uma leve modularização em cima da estrutura padrão mesmo. O Laravel, o framework escolhido, permite esse tipo de customização.
 
-Temos dois módulos: `User` e `Timekeeping`.
+Embora o Laravel seja um Framework monolítico, através do Laravel Vapor, ele consegue quebrar os entrypoints da aplicação em lambdas diferentes de forma automática. Então, em produção, teremos 3 lambdas:
+
+- Web: encarregada de responder a todas as requisições web
+- Queue: engarregada de executar todos os Background Jobs que serão enviados pro SQS (de forma automática via triggers)
+- CLI: para executar o scheduler do Laravel ou comands one-off
+
+Dessa forma, teremos um ambiente altamente escalável e distribuído, mas mantendo a facilidade e praticidade de um framework monolítico.
+
+A nível de organização e modularização, temos dois módulos: `User` e `Timekeeping`.
 
 #### Módulo `User`
 
@@ -61,3 +69,9 @@ Arquitetura da aplicação:
 #### Video de Apresentação
 
 Vídeo no YouTube: PENDING
+
+### Justificativa Fase 2
+
+Para a fase 2, a arquitetura seria a mesma. Apenas adicionariamos alguns modelos a mais, como por exemplo um `ChangeRequest` e um `Approval` ou `Rejection`.
+
+O dashboard seria adicionado usando ou [Filament](https://filamentphp.com/) ou um [Laravel Nova](https://nova.laravel.com/) da mesmo. O "grant" de "admin" seria dado por ambiente via configuração (setar os IDs dos usuários com acesso ao dashboard de admin via configuração de ambiente).
