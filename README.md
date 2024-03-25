@@ -82,4 +82,4 @@ Diagrama ER _sugerido_ da mudança para fase 2:
 
 #### Video de Apresentação
 
-Vídeo no YouTube: PENDING
+Vídeo no YouTube: [https://youtu.be/CqatXNXSFx0](https://youtu.be/CqatXNXSFx0)
