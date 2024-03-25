@@ -66,12 +66,20 @@ Arquitetura da aplicação:
 
 ![Arquitetura](./resources/docs/arquitetura.png)
 
-#### Video de Apresentação
+Diagram ER da Fase 1:
 
-Vídeo no YouTube: PENDING
+![](./resources/docs/erd-fase-1.png)
 
 ### Justificativa Fase 2
 
 Para a fase 2, a arquitetura seria a mesma. Apenas adicionariamos alguns modelos a mais, como por exemplo um `ChangeRequest` e um `Approval` ou `Rejection`.
 
 O dashboard seria adicionado usando ou [Filament](https://filamentphp.com/) ou um [Laravel Nova](https://nova.laravel.com/) da mesmo. O "grant" de "admin" seria dado por ambiente via configuração (setar os IDs dos usuários com acesso ao dashboard de admin via configuração de ambiente).
+
+Diagrama ER _sugerido_ da mudança para fase 2:
+
+![](./resources/docs/erd-fase-2.png)
+
+#### Video de Apresentação
+
+Vídeo no YouTube: PENDING
