@@ -41,8 +41,8 @@ endpoints:
         exampleWasSpecified: false
         custom: []
     cleanBodyParameters:
-      email: effertz.nicolas@example.org
-      password: '0t9m0_8H^mYj}M#P;VTx'
+      email: uwaters@example.net
+      password: "'|`W=76lhYb]Q56t|*"
     fileParameters: []
     responses: []
     responseFields: []
@@ -80,7 +80,7 @@ endpoints:
     auth:
       - headers
       - Authorization
-      - 'Bearer h8bZ63dDP6eavVf4kEg15ca'
+      - 'Bearer dP5D81kcv3fEhaga6V4beZ6'
     controller: null
     method: null
     route: null
@@ -120,7 +120,7 @@ endpoints:
     auth:
       - headers
       - Authorization
-      - 'Bearer vd6VfZaaEbPg16354ekc8hD'
+      - 'Bearer PcgDZ356fkah41vEdab6eV8'
     controller: null
     method: null
     route: null
@@ -160,7 +160,7 @@ endpoints:
     auth:
       - headers
       - Authorization
-      - 'Bearer dE1akef6PDV8avb6gZ4h53c'
+      - 'Bearer E546g6aP3Zhfca81veVDkdb'
     controller: null
     method: null
     route: null
@@ -200,7 +200,7 @@ endpoints:
     auth:
       - headers
       - Authorization
-      - 'Bearer Ed3gV4b86Pc1ZDa56evkhfa'
+      - 'Bearer 5hdc6VZ3aPfkba4eE16Dg8v'
     controller: null
     method: null
     route: null
@@ -234,7 +234,7 @@ endpoints:
         exampleWasSpecified: false
         custom: []
     cleanUrlParameters:
-      entry_id: 1
+      entry_id: 12
     queryParameters: []
     cleanQueryParameters: []
     bodyParameters: []
@@ -251,7 +251,7 @@ endpoints:
     auth:
       - headers
       - Authorization
-      - 'Bearer 48a3gceEPhDvVfb661aZdk5'
+      - 'Bearer eak5a66E8cgfDb4dZ31PVhv'
     controller: null
     method: null
     route: null
@@ -288,14 +288,14 @@ endpoints:
         exampleWasSpecified: false
         custom: []
     cleanBodyParameters:
-      referecen: magnam
+      referecen: consequuntur
     fileParameters: []
     responses: []
     responseFields: []
     auth:
       - headers
       - Authorization
-      - 'Bearer 1fdvDE6b3e5kh46Z8caVgPa'
+      - 'Bearer P8be3VvcgkDa654hd1fZaE6'
     controller: null
     method: null
     route: null
