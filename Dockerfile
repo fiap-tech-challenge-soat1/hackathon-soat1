@@ -3,10 +3,10 @@ FROM dunglas/frankenphp
 RUN install-php-extensions \
     pcntl \
     pdo_mysql \
-	gd \
-	intl \
-	zip \
-	opcache
+    gd \
+    intl \
+    zip \
+    opcache
 
 COPY --from=composer /usr/bin/composer /usr/bin/composer
 
